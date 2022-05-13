@@ -6,27 +6,31 @@ from dateutil.relativedelta import relativedelta
 
 while True:
     try:
-        month = abs(int(input("Birth month: ")))
+        month = int(input("Birth month: "))
         break
     except ValueError:
         print("Please enter numeric value.")
 
 while True:
     try:
-        day = abs(int(input("Birth day: ")))
+        day = int(input("Birth day: "))
         break
     except ValueError:
         print("Please enter numeric value.")
 
 while True:
     try:
-        year = abs(int(input("Birth year (YYYY): ")))
+        year = int(input("Birth year (YYYY): "))
         break
     except ValueError:
         print("Please enter numeric value.")
 
-birthday = date(year, month, day)
-today = date.today()
+try:
+    birthday = date(year, month, day)
+except ValueError as e:
+    print("Error: ", e)
+else:
+    today = date.today()
+    age = relativedelta(today, birthday)
 
-age = relativedelta(today, birthday)
-print(f"Current age is {age.years} years, {age.months} months, and {age.days} days.")
+    print(f"Current age is {age.years} years, {age.months} months, and {age.days} days.")
