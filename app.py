@@ -1,8 +1,12 @@
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-# TODO: Age calculation
-birthday = date(1987, 11, 15)
+
+# Get birthday from user
+month = int(input("Birth month: "))
+day = int(input("Birth day: "))
+year = int(input("Birth year: "))
+birthday = date(year, month, day)
 today = date.today()
 
 age = relativedelta(today, birthday)
