@@ -7,3 +7,57 @@
     DayScreen:
     YearScreen:
     ResultScreen:
+
+<MonthScreen>:
+    name: 'month'
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: month_input
+            text: 'MM'
+        Button:
+            text: 'Enter'
+            on_release: app.root.current = 'day'
+
+
+<DayScreen>:
+    name: 'day'
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: day_input
+            text: 'DD'
+        Button:
+            text: 'Enter'
+            on_release: app.root.current = 'year'
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'month'
+
+    
+<YearScreen>:
+    name: 'year'
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: year_input
+            text: 'YYYY'
+        Button:
+            text: 'Enter'
+            on_release: app.root.current = 'results'
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'day'
+
+<ResultScreen>:
+    name: 'results'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'This is how old the person is'
+        Button:
+            text: 'Back'
+            on_release: app.root.current = 'year'
+        Button:
+            text: 'Start Over'
+            on_release: app.root.current = 'month'
