@@ -2,60 +2,61 @@
 
 <Interface>:
     orientation: 'vertical'
+    month_input: month_input
+    day_input: day_input
+    year_input: year_input
 
     MonthScreen:
+        name: 'month'
+        BoxLayout:
+            orientation: 'vertical'
+            TextInput:
+                id: month_input
+                text: 'MM'
+            Button:
+                text: 'Enter'
+                on_release: app.root.current = 'day'
+
     DayScreen:
+        name: 'day'
+        BoxLayout:
+            orientation: 'vertical'
+            TextInput:
+                id: day_input
+                text: 'DD'
+            Button:
+                text: 'Enter'
+                on_release: app.root.current = 'year'
+            Button:
+                text: 'Back'
+                on_release: app.root.current = 'month'
+
     YearScreen:
+        name: 'year'
+        BoxLayout:
+            orientation: 'vertical'
+            TextInput:
+                id: year_input
+                text: 'YYYY'
+            Button:
+                id: submit_button
+                text: 'Enter'
+                on_release: app.root.current = 'results'
+                on_release: results_text.text = app.root.calculate_age()
+            Button:
+                text: 'Back'
+                on_release: app.root.current = 'day'
+                
     ResultScreen:
-
-<MonthScreen>:
-    name: 'month'
-    BoxLayout:
-        orientation: 'vertical'
-        TextInput:
-            id: month_input
-            text: 'MM'
-        Button:
-            text: 'Enter'
-            on_release: app.root.current = 'day'
-
-<DayScreen>:
-    name: 'day'
-    BoxLayout:
-        orientation: 'vertical'
-        TextInput:
-            id: day_input
-            text: 'DD'
-        Button:
-            text: 'Enter'
-            on_release: app.root.current = 'year'
-        Button:
-            text: 'Back'
-            on_release: app.root.current = 'month'
-
-<YearScreen>:
-    name: 'year'
-    BoxLayout:
-        orientation: 'vertical'
-        TextInput:
-            id: year_input
-            text: 'YYYY'
-        Button:
-            text: 'Enter'
-            on_release: app.root.current = 'results'
-        Button:
-            text: 'Back'
-            on_release: app.root.current = 'day'
-
-<ResultScreen>:
-    name: 'results'
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: 'This is how old the person is'
-        Button:
-            text: 'Back'
-            on_release: app.root.current = 'year'
-        Button:
-            text: 'Start Over'
-            on_release: app.root.current = 'month'
+        name: 'results'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                id: results_text
+                text: "results will go here"
+            Button:
+                text: 'Back'
+                on_release: app.root.current = 'year'
+            Button:
+                text: 'Start Over'
+                on_release: app.root.current = 'month'
