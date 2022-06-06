@@ -1,5 +1,6 @@
 from kivy.app import App 
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.textinput import TextInput
 from kivy.properties import NumericProperty, ObjectProperty
 
 from datetime import date
@@ -20,6 +21,7 @@ class Interface(ScreenManager):
         today = date.today()
 
         age = relativedelta(today, birthday)
+        # TODO: handle error messages if any issues occur
 
         result = f"Current age is {age.years} years, {age.months} months, and {age.days} days."
         print(result)
@@ -35,6 +37,18 @@ class YearScreen(Screen):
     pass
 
 class ResultScreen(Screen):
+    pass
+
+class MonthInput(TextInput):
+    # Todo: implement min and max values
+    pass
+
+class DayInput(TextInput):
+    # Todo: implement min and max values
+    pass
+
+class YearInput(TextInput):
+    # Todo: implement min and max values
     pass
 
 class USAgeCalculatorApp(App):
