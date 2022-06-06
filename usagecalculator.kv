@@ -10,42 +10,61 @@
         name: 'month'
         BoxLayout:
             orientation: 'vertical'
+            Label:
+                text: 'Enter Birth Month (MM)'
             TextInput:
                 id: month_input
-                text: 'MM'
+                focus: True
+                multiline: False
+                text: ''
             Button:
                 text: 'Enter'
                 on_release: app.root.current = 'day'
+                on_release: app.root.month_input.focus = False
+                on_release: app.root.day_input.focus = True
 
     DayScreen:
         name: 'day'
         BoxLayout:
             orientation: 'vertical'
+            Label:
+                text: 'Enter Birth Day (DD)'
             TextInput:
                 id: day_input
-                text: 'DD'
+                multiline: False
+                text: ''
             Button:
                 text: 'Enter'
                 on_release: app.root.current = 'year'
+                on_release: app.root.day_input.focus = False
+                on_release: app.root.year_input.focus = True
             Button:
                 text: 'Back'
                 on_release: app.root.current = 'month'
+                on_release: app.root.day_input.focus = False
+                on_release: app.root.month_input.focus = True
 
     YearScreen:
         name: 'year'
         BoxLayout:
             orientation: 'vertical'
+            Label:
+                text: 'Enter Birth Year (YYYY)'
             TextInput:
                 id: year_input
-                text: 'YYYY'
+                multiline: False
+                text: ''
             Button:
                 id: submit_button
                 text: 'Enter'
                 on_release: app.root.current = 'results'
                 on_release: results_text.text = app.root.calculate_age()
+                on_release: app.root.year_input.focus = False
             Button:
                 text: 'Back'
                 on_release: app.root.current = 'day'
+                on_release: app.root.year_input.focus = False
+                on_release: app.root.day_input.focus = True
                 
     ResultScreen:
         name: 'results'
@@ -57,6 +76,11 @@
             Button:
                 text: 'Back'
                 on_release: app.root.current = 'year'
+                on_release: app.root.year_input.focus = True
             Button:
                 text: 'Start Over'
                 on_release: app.root.current = 'month'
+                on_release: app.root.month_input.focus = True
+                on_release: app.root.month_input.text = ''
+                on_release: app.root.day_input.text = ''
+                on_release: app.root.year_input.text = ''
