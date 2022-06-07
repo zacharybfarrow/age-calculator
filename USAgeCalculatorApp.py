@@ -17,14 +17,16 @@ class Interface(ScreenManager):
         birth_month = int(self.month_input.text)
         birth_day = int(self.day_input.text)
         birth_year = int(self.year_input.text)
-        birthday = date(birth_year, birth_month, birth_day)
-        today = date.today()
+        birthday = ''
 
-        age = relativedelta(today, birthday)
-        # TODO: handle error messages if any issues occur
+        try:
+            birthday = date(birth_year, birth_month, birth_day)
+            today = date.today()
+            age = relativedelta(today, birthday)
+            result = f"Current age is {age.years} years, {age.months} months, and {age.days} days."
+        except Exception as e:
+            result = f"Error: {e}. Please confirm birth date and try again."
 
-        result = f"Current age is {age.years} years, {age.months} months, and {age.days} days."
-        print(result)
         return result
 
 class MonthScreen(Screen):
