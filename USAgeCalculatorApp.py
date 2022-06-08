@@ -77,7 +77,6 @@ class YearInput(TextInput):
             col, row = self.cursor
             text = self._lines[row]
             new_text = text[:col] + substring + text[col:]
-            today = date.today()
             if (int(new_text) < 1 or len(new_text) > 4):
                 return
         
