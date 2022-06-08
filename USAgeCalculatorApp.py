@@ -42,8 +42,11 @@ class ResultScreen(Screen):
     pass
 
 class MonthInput(TextInput):
-    # Todo: implement min and max values
-    pass
+    def insert_text(self, substring, from_undo=False):
+        if substring in range(1, 12):
+            return super().insert_text(substring, from_undo=from_undo)
+        else:
+            return super().insert_text('', from_undo=from_undo)
 
 class DayInput(TextInput):
     # Todo: implement min and max values
