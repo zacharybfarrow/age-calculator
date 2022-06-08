@@ -6,6 +6,8 @@ from kivy.properties import NumericProperty, ObjectProperty
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
+import string
+
 
 class Interface(ScreenManager):
 
@@ -23,7 +25,10 @@ class Interface(ScreenManager):
             birthday = date(birth_year, birth_month, birth_day)
             today = date.today()
             age = relativedelta(today, birthday)
-            result = f"Current age is {age.years} years, {age.months} months, and {age.days} days."
+            if int(age.days) < 1:
+                result = "Error: negative age. Please confirm birth date and try again."
+            else:
+                result = f"Current age is {age.years} years, {age.months} months, and {age.days} days."
         except Exception as e:
             result = f"Error: {e}. Please confirm birth date and try again."
 
@@ -42,19 +47,41 @@ class ResultScreen(Screen):
     pass
 
 class MonthInput(TextInput):
+
     def insert_text(self, substring, from_undo=False):
-        if substring in range(1, 12):
-            return super().insert_text(substring, from_undo=from_undo)
-        else:
-            return super().insert_text('', from_undo=from_undo)
+        if substring in string.digits:
+            col, row = self.cursor
+            text = self._lines[row]
+            new_text = text[:col] + substring + text[col:]
+            if (int(new_text) < 1 or int(new_text) > 12):
+                return
+        
+        super(MonthInput, self).insert_text(substring, from_undo=from_undo)
 
 class DayInput(TextInput):
-    # Todo: implement min and max values
-    pass
+
+    def insert_text(self, substring, from_undo=False):
+        if substring in string.digits:
+            col, row = self.cursor
+            text = self._lines[row]
+            new_text = text[:col] + substring + text[col:]
+            if (int(new_text) < 1 or int(new_text) > 31):
+                return
+        
+        super(DayInput, self).insert_text(substring, from_undo=from_undo)
 
 class YearInput(TextInput):
-    # Todo: implement min and max values
-    pass
+
+    def insert_text(self, substring, from_undo=False):
+        if substring in string.digits:
+            col, row = self.cursor
+            text = self._lines[row]
+            new_text = text[:col] + substring + text[col:]
+            today = date.today()
+            if (int(new_text) < 1 or len(new_text) > 4):
+                return
+        
+        super(YearInput, self).insert_text(substring, from_undo=from_undo)
 
 class USAgeCalculatorApp(App):
     def build(self):
