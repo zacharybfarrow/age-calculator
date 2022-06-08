@@ -2,6 +2,12 @@
 
 <Interface>:
     orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: .14, .10, .06, 1              # Hex value: 251A10
+        Rectangle:
+            pos: self.pos
+            size: self.size
     month_input: month_input
     day_input: day_input
     year_input: year_input
@@ -12,6 +18,7 @@
             orientation: 'vertical'
             Label:
                 text: 'Enter Birth Month (MM)'
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
             MonthInput:
                 id: month_input
                 input_filter: 'int'
@@ -20,9 +27,13 @@
                 text: ''
             Button:
                 text: 'Enter'
+                background_normal: ''
+                background_color: .14, .10, .06, 1
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
                 on_release: app.root.current = 'day'
                 on_release: app.root.month_input.focus = False
                 on_release: app.root.day_input.focus = True
+                
 
     DayScreen:
         name: 'day'
@@ -30,6 +41,7 @@
             orientation: 'vertical'
             Label:
                 text: 'Enter Birth Day (DD)'
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
             DayInput:
                 id: day_input
                 multiline: False
@@ -37,11 +49,17 @@
                 text: ''
             Button:
                 text: 'Enter'
+                background_normal: ''
+                background_color: .14, .10, .06, 1                
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
                 on_release: app.root.current = 'year'
                 on_release: app.root.day_input.focus = False
                 on_release: app.root.year_input.focus = True
             Button:
                 text: 'Back'
+                background_normal: ''
+                background_color: .14, .10, .06, 1
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
                 on_release: app.root.current = 'month'
                 on_release: app.root.day_input.focus = False
                 on_release: app.root.month_input.focus = True
@@ -52,6 +70,7 @@
             orientation: 'vertical'
             Label:
                 text: 'Enter Birth Year (YYYY)'
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
             YearInput:
                 id: year_input
                 multiline: False
@@ -60,11 +79,17 @@
             Button:
                 id: submit_button
                 text: 'Enter'
+                background_normal: ''
+                background_color: .14, .10, .06, 1
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
                 on_release: app.root.current = 'results'
                 on_release: results_text.text = app.root.calculate_age()
                 on_release: app.root.year_input.focus = False
             Button:
                 text: 'Back'
+                background_normal: ''
+                background_color: .14, .10, .06, 1
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
                 on_release: app.root.current = 'day'
                 on_release: app.root.year_input.focus = False
                 on_release: app.root.day_input.focus = True
@@ -76,12 +101,19 @@
             Label:
                 id: results_text
                 text: "results will go here"
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
             Button:
                 text: 'Back'
+                background_normal: ''
+                background_color: .14, .10, .06, 1
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
                 on_release: app.root.current = 'year'
                 on_release: app.root.year_input.focus = True
             Button:
                 text: 'Start Over'
+                background_normal: ''
+                background_color: .14, .10, .06, 1
+                color: .78, .98, .92, 1          # Hex value: C9FAE7
                 on_release: app.root.current = 'month'
                 on_release: app.root.month_input.focus = True
                 on_release: app.root.month_input.text = ''
