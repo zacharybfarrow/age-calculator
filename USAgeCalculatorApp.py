@@ -28,7 +28,7 @@ class Interface(ScreenManager):
             if int(age.days) < 1:
                 result = "Error: negative age. Please confirm birth date and try again."
             else:
-                result = f"{age.years} years, {age.months} months, and {age.days} days"
+                result = f"{age.years} years, {age.months} months,\n and {age.days} days"
         except Exception as e:
             result = f"Error: {e}. Please confirm birth date and try again."
 

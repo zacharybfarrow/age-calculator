@@ -85,15 +85,6 @@
                 orientation: 'horizontal'
                 spacing: 10
                 Button:
-                    text: 'Enter'
-                    background_normal: ''
-                    background_color: .14, .10, .06, 1                
-                    color: .78, .98, .92, 1          # Hex value: C9FAE7
-                    font_size: 20
-                    on_release: app.root.current = 'year'
-                    on_release: app.root.day_input.focus = False
-                    on_release: app.root.year_input.focus = True
-                Button:
                     text: 'Back'
                     background_normal: ''
                     background_color: .14, .10, .06, 1
@@ -102,6 +93,15 @@
                     on_release: app.root.current = 'month'
                     on_release: app.root.day_input.focus = False
                     on_release: app.root.month_input.focus = True
+                Button:
+                    text: 'Enter'
+                    background_normal: ''
+                    background_color: .14, .10, .06, 1                
+                    color: .78, .98, .92, 1          # Hex value: C9FAE7
+                    font_size: 20
+                    on_release: app.root.current = 'year'
+                    on_release: app.root.day_input.focus = False
+                    on_release: app.root.year_input.focus = True
 
     YearScreen:
         name: 'year'
@@ -135,6 +135,16 @@
                 orientation: 'horizontal'
                 spacing: 10
                 Button:
+                    text: 'Back'
+                    background_normal: ''
+                    background_color: .14, .10, .06, 1
+                    color: .78, .98, .92, 1          # Hex value: C9FAE7
+                    font_size: 20
+                    on_release: app.root.current = 'day'
+                    on_release: app.root.year_input.focus = False
+                    on_release: app.root.day_input.focus = True
+                    size_hint: .5, 1
+                Button:
                     id: submit_button
                     text: 'Enter'
                     background_normal: ''
@@ -144,16 +154,6 @@
                     on_release: app.root.current = 'results'
                     on_release: results_text.text = app.root.calculate_age()
                     on_release: app.root.year_input.focus = False
-                    size_hint: .5, 1
-                Button:
-                    text: 'Back'
-                    background_normal: ''
-                    background_color: .14, .10, .06, 1
-                    color: .78, .98, .92, 1          # Hex value: C9FAE7
-                    font_size: 20
-                    on_release: app.root.current = 'day'
-                    on_release: app.root.year_input.focus = False
-                    on_release: app.root.day_input.focus = True
                     size_hint: .5, 1
                 
     ResultScreen:
