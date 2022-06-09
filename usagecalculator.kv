@@ -25,6 +25,8 @@
                 focus: True
                 multiline: False
                 text: ''
+                on_text_validate: app.root.current = 'day'
+                on_text_validate: app.root.day_input.focus = True
             Button:
                 text: 'Enter'
                 background_normal: ''
@@ -47,6 +49,8 @@
                 multiline: False
                 input_filter: 'int'
                 text: ''
+                on_text_validate: app.root.current = 'year'
+                on_text_validate: app.root.year_input.focus = True
             Button:
                 text: 'Enter'
                 background_normal: ''
@@ -76,6 +80,8 @@
                 multiline: False
                 input_filter: 'int'
                 text: ''
+                on_text_validate: app.root.current = 'results'
+                on_text_validate: results_text.text = app.root.calculate_age()
             Button:
                 id: submit_button
                 text: 'Enter'
