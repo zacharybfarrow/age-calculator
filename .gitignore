@@ -131,3 +131,6 @@ dmypy.json
 # VS Code specific settings
 .vscode/
 age-calculator.code-workspace
+
+# Mac OS specific settings
+.DS_store
