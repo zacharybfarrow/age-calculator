@@ -19,7 +19,9 @@
             spacing: 10
             padding: 10
             Label:
-                text: 'Enter Birth Month (MM)'
+                text: 'Enter Birth Month:'
+                font_name: 'DMSerif'
+                italic: True
                 color: .78, .98, .92, 1          # Hex value: C9FAE7
                 font_size: 20
                 canvas.before:
@@ -36,6 +38,7 @@
                 background_color: .41, .56, .44, 1        # Hex Value: 6B8F71
                 text_color: .14, .10, .06, 1              # Hex value: 251A10
                 halign: 'center'
+                font_name: 'DMSerif'
                 font_size: 50
                 padding: self.height / 3
                 text: ''
@@ -43,6 +46,7 @@
                 on_text_validate: app.root.day_input.focus = True
             Button:
                 text: 'Enter'
+                font_name: 'DMSerif'
                 font_size: 20
                 background_normal: ''
                 background_color: .14, .10, .06, 1
@@ -60,7 +64,9 @@
             spacing: 10
             padding: 10
             Label:
-                text: 'Enter Birth Day (DD)'
+                text: 'Enter Birth Day:'
+                font_name: 'DMSerif'
+                italic: True
                 color: .78, .98, .92, 1          # Hex value: C9FAE7
                 font_size: 20
                 canvas.before:
@@ -76,6 +82,7 @@
                 background_color: .41, .56, .44, 1        # Hex Value: 6B8F71
                 text_color: .14, .10, .06, 1              # Hex value: 251A10
                 halign: 'center'
+                font_name: 'DMSerif'
                 font_size: 50
                 padding: self.height / 3
                 text: ''
@@ -90,6 +97,7 @@
                     background_color: .14, .10, .06, 1
                     color: .78, .98, .92, 1          # Hex value: C9FAE7
                     font_size: 20
+                    font_name: 'DMSerif'
                     on_release: app.root.current = 'month'
                     on_release: app.root.day_input.focus = False
                     on_release: app.root.month_input.focus = True
@@ -99,6 +107,7 @@
                     background_color: .14, .10, .06, 1                
                     color: .78, .98, .92, 1          # Hex value: C9FAE7
                     font_size: 20
+                    font_name: 'DMSerif'
                     on_release: app.root.current = 'year'
                     on_release: app.root.day_input.focus = False
                     on_release: app.root.year_input.focus = True
@@ -110,7 +119,9 @@
             spacing: 10
             padding: 10
             Label:
-                text: 'Enter Birth Year (YYYY)'
+                text: 'Enter Birth Year (YYYY):'
+                font_name: 'DMSerif'
+                italic: True
                 color: .78, .98, .92, 1          # Hex value: C9FAE7
                 font_size: 20
                 canvas.before:
@@ -126,6 +137,7 @@
                 background_color: .41, .56, .44, 1        # Hex Value: 6B8F71
                 text_color: .14, .10, .06, 1              # Hex value: 251A10
                 halign: 'center'
+                font_name: 'DMSerif'
                 font_size: 50
                 padding: self.height / 3
                 text: ''
@@ -140,6 +152,7 @@
                     background_color: .14, .10, .06, 1
                     color: .78, .98, .92, 1          # Hex value: C9FAE7
                     font_size: 20
+                    font_name: 'DMSerif'
                     on_release: app.root.current = 'day'
                     on_release: app.root.year_input.focus = False
                     on_release: app.root.day_input.focus = True
@@ -151,6 +164,7 @@
                     background_color: .14, .10, .06, 1
                     color: .78, .98, .92, 1          # Hex value: C9FAE7
                     font_size: 20
+                    font_name: 'DMSerif'
                     on_release: app.root.current = 'results'
                     on_release: results_text.text = app.root.calculate_age()
                     on_release: app.root.year_input.focus = False
@@ -165,6 +179,8 @@
             Label:
                 id: results_label
                 text: "Current age is: "
+                font_name: 'DMSerif'
+                italic: True
                 font_size: 20
                 halign: 'center'
                 valign: 'center'
@@ -180,6 +196,7 @@
                 text: "results will go here"
                 text_size: self.size
                 font_size: 20
+                font_name: 'DMSerif'
                 padding: (10, 10)
                 halign: 'center'
                 valign: 'center'
@@ -196,6 +213,7 @@
                 Button:
                     text: 'Back'
                     font_size: 20
+                    font_name: 'DMSerif'
                     padding: (10, 10)
                     background_normal: ''
                     background_color: .14, .10, .06, 1
@@ -206,6 +224,7 @@
                 Button:
                     text: 'Start Over'
                     font_size: 20
+                    font_name: 'DMSerif'
                     padding: (10, 10)
                     background_normal: ''
                     background_color: .14, .10, .06, 1

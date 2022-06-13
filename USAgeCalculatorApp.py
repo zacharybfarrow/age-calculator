@@ -1,6 +1,7 @@
 from kivy.app import App 
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.textinput import TextInput
+from kivy.core.text import LabelBase
 from kivy.properties import NumericProperty, ObjectProperty
 
 from datetime import date
@@ -8,6 +9,10 @@ from dateutil.relativedelta import relativedelta
 
 import string
 
+
+LabelBase.register(name="DMSerif", 
+    fn_regular='DMSerifText-Regular.ttf', fn_italic='DMSerifText-Italic.ttf'
+    )
 
 class Interface(ScreenManager):
 
