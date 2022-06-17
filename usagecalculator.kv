@@ -23,7 +23,7 @@
                 font_name: 'DMSerif'
                 italic: True
                 color: .78, .98, .92, 1          # Hex value: C9FAE7
-                font_size: 20
+                font_size: 75
                 canvas.before:
                     Color: 
                         rgb: .14, .10, .06, 1
@@ -39,7 +39,7 @@
                 text_color: .14, .10, .06, 1              # Hex value: 251A10
                 halign: 'center'
                 font_name: 'DMSerif'
-                font_size: 50
+                font_size: 150
                 padding: self.height / 3
                 text: ''
                 on_text_validate: app.root.current = 'day'
@@ -47,7 +47,7 @@
             Button:
                 text: 'Enter'
                 font_name: 'DMSerif'
-                font_size: 20
+                font_size: 75
                 background_normal: ''
                 background_color: .14, .10, .06, 1
                 color: .78, .98, .92, 1          # Hex value: C9FAE7
@@ -68,7 +68,7 @@
                 font_name: 'DMSerif'
                 italic: True
                 color: .78, .98, .92, 1          # Hex value: C9FAE7
-                font_size: 20
+                font_size: 75
                 canvas.before:
                     Color: 
                         rgb: .14, .10, .06, 1
@@ -83,7 +83,7 @@
                 text_color: .14, .10, .06, 1              # Hex value: 251A10
                 halign: 'center'
                 font_name: 'DMSerif'
-                font_size: 50
+                font_size: 150
                 padding: self.height / 3
                 text: ''
                 on_text_validate: app.root.current = 'year'
@@ -96,7 +96,7 @@
                     background_normal: ''
                     background_color: .14, .10, .06, 1
                     color: .78, .98, .92, 1          # Hex value: C9FAE7
-                    font_size: 20
+                    font_size: 75
                     font_name: 'DMSerif'
                     on_release: app.root.current = 'month'
                     on_release: app.root.day_input.focus = False
@@ -106,7 +106,7 @@
                     background_normal: ''
                     background_color: .14, .10, .06, 1                
                     color: .78, .98, .92, 1          # Hex value: C9FAE7
-                    font_size: 20
+                    font_size: 75
                     font_name: 'DMSerif'
                     on_release: app.root.current = 'year'
                     on_release: app.root.day_input.focus = False
@@ -123,7 +123,7 @@
                 font_name: 'DMSerif'
                 italic: True
                 color: .78, .98, .92, 1          # Hex value: C9FAE7
-                font_size: 20
+                font_size: 75
                 canvas.before:
                     Color: 
                         rgb: .14, .10, .06, 1
@@ -138,7 +138,7 @@
                 text_color: .14, .10, .06, 1              # Hex value: 251A10
                 halign: 'center'
                 font_name: 'DMSerif'
-                font_size: 50
+                font_size: 150
                 padding: self.height / 3
                 text: ''
                 on_text_validate: app.root.current = 'results'
@@ -151,7 +151,7 @@
                     background_normal: ''
                     background_color: .14, .10, .06, 1
                     color: .78, .98, .92, 1          # Hex value: C9FAE7
-                    font_size: 20
+                    font_size: 75
                     font_name: 'DMSerif'
                     on_release: app.root.current = 'day'
                     on_release: app.root.year_input.focus = False
@@ -163,7 +163,7 @@
                     background_normal: ''
                     background_color: .14, .10, .06, 1
                     color: .78, .98, .92, 1          # Hex value: C9FAE7
-                    font_size: 20
+                    font_size: 75
                     font_name: 'DMSerif'
                     on_release: app.root.current = 'results'
                     on_release: results_text.text = app.root.calculate_age()
@@ -181,7 +181,7 @@
                 text: "Current age is: "
                 font_name: 'DMSerif'
                 italic: True
-                font_size: 20
+                font_size: 75
                 halign: 'center'
                 valign: 'center'
                 color: .78, .98, .92, 1          # Hex value: C9FAE7
@@ -195,7 +195,7 @@
                 id: results_text
                 text: "results will go here"
                 text_size: self.size
-                font_size: 20
+                font_size: 75
                 font_name: 'DMSerif'
                 padding: (10, 10)
                 halign: 'center'
@@ -212,7 +212,7 @@
                 spacing: 10
                 Button:
                     text: 'Back'
-                    font_size: 20
+                    font_size: 75
                     font_name: 'DMSerif'
                     padding: (10, 10)
                     background_normal: ''
@@ -223,7 +223,7 @@
                     size_hint: .5, 1
                 Button:
                     text: 'Start Over'
-                    font_size: 20
+                    font_size: 75
                     font_name: 'DMSerif'
                     padding: (10, 10)
                     background_normal: ''
