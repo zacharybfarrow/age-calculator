@@ -23,19 +23,7 @@
                 italic: True
             MonthInput:
                 id: month_input
-                input_filter: 'int'
-                focus: True
-                multiline: False
-                background_color: .41, .56, .44, 1        # Hex Value: 6B8F71
-                text_color: .14, .10, .06, 1              # Hex value: 251A10
-                halign: 'center'
-                font_name: 'DMSerif'
-                font_size: 150
-                padding: self.height / 3
-                text: ''
             GridLayout:
-                cols: 3
-                rows: 4
                 NumericButton:
                     text: '1'
                     on_release: app.root.month_input.insert_text('1')
@@ -84,18 +72,7 @@
                 italic: True
             DayInput:
                 id: day_input
-                multiline: False
-                input_filter: 'int'
-                background_color: .41, .56, .44, 1        # Hex Value: 6B8F71
-                text_color: .14, .10, .06, 1              # Hex value: 251A10
-                halign: 'center'
-                font_name: 'DMSerif'
-                font_size: 150
-                padding: self.height / 3
-                text: ''
             GridLayout:
-                cols: 3
-                rows: 4
                 NumericButton:
                     text: '1'
                     on_release: app.root.day_input.insert_text('1')
@@ -140,22 +117,13 @@
             spacing: 10
             padding: 10
             Label:
-                text: 'Enter Birth Year (YYYY):'
+                text: 'Enter Birth Year:'
                 italic: True
             YearInput:
                 id: year_input
-                multiline: False
-                input_filter: 'int'
-                background_color: .41, .56, .44, 1        # Hex Value: 6B8F71
-                text_color: .14, .10, .06, 1              # Hex value: 251A10
-                halign: 'center'
-                font_name: 'DMSerif'
-                font_size: 150
-                padding: self.height / 3
-                text: ''
+                hint_text: 'YYYY'
+                hint_text_color:  .14, .10, .06, .3
             GridLayout:
-                cols: 3
-                rows: 4
                 NumericButton:
                     text: '1'
                     on_release: app.root.year_input.insert_text('1')
@@ -241,7 +209,21 @@
             size: self.size
 
 <TextInput>:
+    padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
     on_focus: self.focus = False
+    input_filter: 'int'
+    multiline: False
+    background_color: .41, .56, .44, 1        # Hex Value: 6B8F71
+    text_color: .14, .10, .06, 1              # Hex value: 251A10
+    halign: 'center'
+    font_name: 'DMSerif'
+    font_size: 150
+
+<GridLayout>:
+    cols: 3
+    rows: 4
+    padding: 5
+    spacing: 5
 
 <Button>:
     font_name: 'DMSerif'
