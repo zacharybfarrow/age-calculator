@@ -57,8 +57,14 @@
                     text: '0'
                     on_release: app.root.month_input.insert_text('0')
                 Button:
-                    text: 'Enter'
-                    on_release: if (month_input.text != ''): app.root.current = 'day'
+                    text: '⌫'
+                    font_name: 'Pragmata'
+                    font_size: 100
+                    on_release: app.root.month_input.do_backspace()
+            Button:
+                text: 'Enter'
+                size_hint: 1, .2
+                on_release: if (month_input.text != ''): app.root.current = 'day'
                 
 
     DayScreen:
@@ -105,10 +111,16 @@
                     on_release: app.root.current = 'month'
                 NumericButton:
                     text: '0'
-                    on_release: app.root.day_input.insert_text('0')
+                    on_release: app.root.day_input.insert_text('0')    
                 Button:
-                    text: 'Enter'
-                    on_release: if (day_input.text != ''): app.root.current = 'year'
+                    text: '⌫'
+                    font_name: 'Pragmata'
+                    font_size: 100
+                    on_release: app.root.day_input.do_backspace()
+            Button:
+                text: 'Enter'
+                size_hint: 1, .2
+                on_release: if (day_input.text != ''): app.root.current = 'year'
 
     YearScreen:
         name: 'year'
@@ -158,10 +170,16 @@
                     text: '0'
                     on_release: app.root.year_input.insert_text('0')
                 Button:
-                    id: submit_button
-                    text: 'Enter'
-                    on_release: if (year_input.text != ''): app.root.current = 'results'
-                    on_release: if (year_input.text != ''): results_text.text = app.root.calculate_age()
+                    text: '⌫'
+                    font_name: 'Pragmata'
+                    font_size: 100
+                    on_release: app.root.year_input.do_backspace()
+            Button:
+                id: submit_button
+                text: 'Enter'
+                size_hint: 1, .2
+                on_release: if (year_input.text != ''): app.root.current = 'results'
+                on_release: if (year_input.text != ''): results_text.text = app.root.calculate_age()
                 
     ResultScreen:
         name: 'results'
@@ -170,30 +188,25 @@
             spacing: 10
             padding: 10
             Label:
-                id: results_label
-                text: "Current age is: "
-                italic: True
-            Label:
                 id: results_text
                 text: "results will go here"
-                text_size: self.size
+                size_hint: 1, .85
                 padding: (10, 10)      
             BoxLayout:
                 orientation: 'horizontal'
                 spacing: 10
+                size_hint: 1, .056
                 Button:
                     text: 'Back'
                     padding: (10, 10)
                     on_release: app.root.current = 'year'
-                    size_hint: .5, 1
                 Button:
-                    text: 'Start Over'
+                    text: 'Start New'
                     padding: (10, 10)
                     on_release: app.root.current = 'month'
                     on_release: app.root.month_input.text = ''
                     on_release: app.root.day_input.text = ''
                     on_release: app.root.year_input.text = ''
-                    size_hint: .5, 1
 
 <Label>:
     font_name: 'DMSerif'
@@ -222,7 +235,7 @@
 <GridLayout>:
     cols: 3
     rows: 4
-    padding: 5
+    padding: 0
     spacing: 5
 
 <Button>:

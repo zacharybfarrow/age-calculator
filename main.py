@@ -15,6 +15,8 @@ LabelBase.register(name="DMSerif",
     fn_regular='DMSerifText-Regular.ttf', fn_italic='DMSerifText-Italic.ttf'
     )
 
+LabelBase.register(name="Pragmata", fn_regular='Pragmata.ttf')
+
 class Interface(ScreenManager):
 
     month_input = ObjectProperty(None)
@@ -34,7 +36,7 @@ class Interface(ScreenManager):
             if int(age.days) < 1:
                 result = "Error: negative age. Please confirm birth date and try again."
             else:
-                result = f"{age.years} years, {age.months} months,\n and {age.days} days"
+                result = f"Current age is\n{age.years} years, {age.months} months,\n and {age.days} days"
         except Exception as e:
             result = f"Error: {e}. Please confirm birth date and try again."
 
