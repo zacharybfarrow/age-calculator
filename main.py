@@ -1,6 +1,7 @@
 from kivy.app import App 
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
 from kivy.core.text import LabelBase
 from kivy.properties import NumericProperty, ObjectProperty
 
@@ -86,6 +87,9 @@ class YearInput(TextInput):
                 return
         
         super(YearInput, self).insert_text(substring, from_undo=from_undo)
+
+class NumericButton(Button):
+    pass
 
 class USAgeCalculatorApp(App):
     def build(self):
